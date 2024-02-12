@@ -8,36 +8,55 @@ const limit= 10;
 	    console.log(`${input} x ${i} = ${input * i}`)
 	    }
 
+
 // NO 2   
 // Write a code to check whether a string is a palindrome or not.
 // Example : ‘madam’ → palindrome
+//pake built in method
+const kata2 = "madam";
+const isPalindrome = kata2 ===kata2.split("").reverse().join("");
 
-// // const palindrome = "madam";
-// const result = true;
-// let j = palindrome.length - 1;
+console.log(kata2.split(""));
+console.log(kata2.split("").reverse()); //reverse untuk membalik huruf dari belakang kedepan
+console.log(kata2.split('').reverse().join("")); //join untuk menggabung dari split
 
-// for (let i = 0; i < j; i++) {
-//   if (palindrome[i] !== palindrome[j]) {
-//     result = false;
-//     break;
-//   }
-//   j--;
-// }
+console.log(isPalindrome); 
 
-// console.log(result === true ? "Palindrome" : "not Palindrome");
+//tanpa built in method
+const kata22 = "jogja";
+let reverse = "";
+
+//reverse = "ajgoj"
+
+for (let i = kata22.length - 1; i >= 0; i-- ) {
+reverse += kata22[i];
+console.log(kata22[i]);
+	}
+
+console.log(kata22.length)
+console.log(reverse)
 
 // NO 3
 //Write a code to convert centimeter to kilometer
 //Example : 100000 → “1 km”
 const centimeter = 100000;
 const kilometer =  centimeter / 100000;
-console.log(kilometer);
+console.log(kilometer + "km");
  
 //NO 4
 //Write a code to format number as currency (IDR)
 //Example : 1000 → “Rp. 1.000,00”
 const number4 = 1000;
-console.log("Rp." + number4 + ",00")
+console.log("Rp." + number4 + ",00");
+
+const harga = 10000
+const rupiah = new Intl.NumberFormat('id-ID', {
+	style :"currency",
+	currency : "IDR",
+	maximumFractionDigits : 0,
+});
+
+console.log(rupiah.format(harga));
 
 //NO 5 
 //Write a code to remove the first occurrence of a given “search string” from a string
@@ -46,29 +65,80 @@ const nama5 = "Hello World";
 const removenama5 = nama5.replace("ell","");
 console.log(removenama5);
 
+//cara lain
+const nama52 = "Hello World";
+const search = "ell";
+const replaceWith = "";
+
+const remove = nama52.replace(search, replaceWith);
+
+console.log(remove);
+
 //NO 6 
 //Write a code to capitalize the first letter of each word in a string
 //Example : “hello world” → “Hello World”
-const str = "hello world"
-const pisahkata = str.split(" ");
-console.log(pisahkata);
+
+const input6 = "hello world"; 
+console.log(input6[0]);
+
+let words = input6.split(" ");
+console.log(words.length);
+console.log(words);
+
+for (let i1 = 0; i1 < words.length; i1++) {
+	words[i1] = words[i1] [0].toUpperCase() + words[i1].slice(1)
+
+	console.log(words[i1].slice(1)); //kalo bingung isinya apa
+
+}
+
+console.log(words);
+console.log(words.join(" "))
 
 //NO 7
 //Write a code to reverse a string.
 //Example : “hello” → “olleh”
-//// let originalString = "hello";
-// let newString = "";
-// for (let i = originalString.length - 1; i >= 0; i--) {
-//   newString += originalString[i];
-// }
 
-// console.log(newString);
+//cara 1 build in method
+
+const kata7 = "helllo";
+const reverse7 = kata7.split("").reverse().join("")
+
+console.log(kata7 + "->" + reverse7 );
+
+//cara tanpa build in method
+const str = "hello";
+let message7 = "";
+
+console.log(str.length -1);
+
+for (let i7 = str.length -1; i7 >=0; i7--){
+	message7 += str [i7];
+}
+
+console.log(message7);
 
 //NO 8 
 //Write a code to swap the case of each character from string 
 //Example : ‘The QuiCk BrOwN Fox’ -> ‘ tHE qUIcK bRoWn fOX’
-const kata8 = "The QuiCk BrOwN Fox"
-console.log(kata8); 
+
+const inputString8 = "The QuiCk BrOwN Fox";
+let swappedString = "";
+
+for (let i8 = 0; i8 < inputString8.length; i8++) {
+	const char = inputString8[i8];
+
+	console.log(char);
+
+	if (char === inputString8[i8].toUpperCase()){
+		swappedString += char.toLowerCase();}
+		else {
+			swappedString += char.toUpperCase();
+		}
+	}
+
+console.log (swappedString);
+
 
 //NO 9
 //Write a code to find the largest of two given integers
@@ -84,51 +154,26 @@ if (num9 > number9) {
 //NO 10
 //Write a conditional statement to sort three numbers
 //Example : num1 = 42, num2 = 27, num3 = 18 → 18, 27, 42
-//// let num1 = 42;
-// let num2 = 27;
-// let num3 = 18;
 
-// if (num1 > num2) {
-//   let sort = num1;
-//   num1 = num2;
-//   num2 = sort;
-// }
+const number10a = 42;
+const number10b = 27;
+const number10c = 18;
 
-// if (num1 > num3) {
-//   let sort = num1;
-//   num1 = num3;
-//   num3 = sort;
-// }
+const smallest = Math.min(number10a, number10b, number10c);
+const largest = Math.max(number10a,number10b,number10c); 
+const middle = number10a + number10b + number10c - smallest - largest;
 
-// if (num2 > num3) {
-//   let sort = num2;
-//   num2 = num3;
-//   num3 = sort;
-// }
+console.log(smallest);
+console.log(largest);
+console.log(middle);
 
-// console.log(num1 + ', ' + num2 + ', ' + num3);
+console.log(smallest,middle,largest)
 
-//NO 11
 //Write a code that shows 1 if the input is a string, 2 if the input is a number, and 3 for others data type.
-//Example : “hello” → 1
-//// let input = "hello";
-// let result = "";
+// Example : “hello” → 1
 
-// if (typeof input === "string") {
-//   result = 1;
-// } else if (typeof input === "number") {
-//   result = 2;
-// } else {
-//   result = 3;
-// }
-
-// console.log(result);
-// console.log(input + " -> " + result);
-
-
-//NO 12
 //Write a code to change every letter a into * from a string of input
-//Example : ‘An apple a day keeps the doctor away’ -> `*n *pple * d*y keeps the doctor *w*y
+// Example : ‘An apple a day keeps the doctor away’ -> `*n *pple * d*y keeps the doctor *w
 //// const str = "An apple a day keeps the doctor away";
 // const modifiedStr = "*";
 // let result = "";
@@ -143,3 +188,22 @@ if (num9 > number9) {
 
 // console.log(result);
 
+// const
+//let type;
+
+// if (typeof input11 === "string") {
+// type = 1
+// } //else if 
+
+
+
+
+//for (let i12 = 0; i12 < inputstring12.length; i12++) {
+//	if (inputstring12[i12] === gantidengan) {
+//		modifiedString += "*";
+//	} else {
+//		modifiedString += inputstring12[i12];
+//	}
+// 
+
+// console.log(modifiedString)
