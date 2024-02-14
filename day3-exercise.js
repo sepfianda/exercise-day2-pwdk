@@ -49,6 +49,7 @@ console.log(kilometer + "km");
 const number4 = 1000;
 console.log("Rp." + number4 + ",00");
 
+//cara lain
 const harga = 10000
 const rupiah = new Intl.NumberFormat('id-ID', {
 	style :"currency",
@@ -169,41 +170,39 @@ console.log(middle);
 
 console.log(smallest,middle,largest)
 
+//NO 11
 //Write a code that shows 1 if the input is a string, 2 if the input is a number, and 3 for others data type.
 // Example : “hello” → 1
 
+let input11 = "hello";
+let type;
+
+if (typeof input11 === "string"){
+	type = 1;
+} else if (typeof input11 === 'number'){
+	type = 2;
+} else {
+	type = 3;
+}
+
+console.log(type);
+
+//NO 12
 //Write a code to change every letter a into * from a string of input
 // Example : ‘An apple a day keeps the doctor away’ -> `*n *pple * d*y keeps the doctor *w
-//// const str = "An apple a day keeps the doctor away";
-// const modifiedStr = "*";
-// let result = "";
 
-// for (let i = 0; i < str.length; i++){
-//   if (str[i] === 'a' || str[i] === "A") {
-//     result += modifiedStr;
-//   } else {
-//     result += str[i];
-//   }
-// }
+const inputString = "An apple a day keeps the doctor away".toLowerCase();
+console.log(inputString);
 
-// console.log(result);
+const replaceWord = "a";
+let modifiedString = "";
 
-// const
-//let type;
+for (let j = 0; j < inputString.length; j++) {
+if (inputString[j] === replaceWord) {
+	modifiedString = modifiedString + "*";
+} else {
+	modifiedString = modifiedString + inputString[j];
+}
+}
 
-// if (typeof input11 === "string") {
-// type = 1
-// } //else if 
-
-
-
-
-//for (let i12 = 0; i12 < inputstring12.length; i12++) {
-//	if (inputstring12[i12] === gantidengan) {
-//		modifiedString += "*";
-//	} else {
-//		modifiedString += inputstring12[i12];
-//	}
-// 
-
-// console.log(modifiedString)
+console.log(modifiedString);
